@@ -4,9 +4,11 @@ Detteapp::Application.routes.draw do
 
   match 'app' => 'welcome#app'
 
-  namespace :api do
-    match 'friends' => 'api/friends', :via => :get
-    resources :transactions, :except => [:new, :edit, :show, :destroy]
+  namespace :api, :format => :json do
+    scope '1.0' do
+      match 'friends' => 'api/friends', :via => :get
+      resources :transactions, :except => [:new, :edit, :show, :destroy]
+    end
   end
 
   # You can have the root of your site routed with "root"
