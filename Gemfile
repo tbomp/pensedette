@@ -23,6 +23,7 @@ gem 'jquery-rails'
 group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.5'
+  gem 'pry'
 end
 
 group :test do
