@@ -1,8 +1,37 @@
-h1 MyHello World
+h3 Me
+- unless @me_on_facebook.blank?
+  table
+    tr
+      td My name:
+      td = @me_on_facebook [ :name ]
+    - unless @me_on_facebook.blank?
+      tr
+        td Ma tête
+        td
+          img src="#{@me_on_facebook [ :picture ]}"
+    tr
+    tr
+      td All About Me
+      td = @me_on_facebook
+    
+      
+      
+- else
+  p
+    |I don't know who I am :(
+
+
+
+
+h3 My Friends
 - unless @facebook_friends.blank?
   table
     - for item in @facebook_friends do
       tr
-        td = item
+        td = item [ :name ]
+        td
+          img src="http://www.google.fr/logos/2011/henson11-sr.png"
 - else
   p No friend found.
+
+
