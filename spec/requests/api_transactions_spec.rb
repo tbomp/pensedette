@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe "ApiTransactions" do
-  describe "GET /api_transactions" do
+  describe "GET /api/1.0/transactions" do
     it "works! (now write some real specs)" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get api_transactions_index_path
+      get api_transactions_path
       response.status.should be(200)
     end
   end

@@ -26,6 +26,10 @@ class Transaction < ActiveRecord::Base
   REGECTED = 2
   CANCELED = 3
   CLEARED  = 4
+
+  def amount_eur
+    Math.round(amount / 100)
+  end
 end
 Transaction.auto_upgrade!
 

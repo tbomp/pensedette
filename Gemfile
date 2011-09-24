@@ -6,6 +6,7 @@ gem 'oa-oauth', :require => 'omniauth/oauth'
 gem 'koala', '~> 1.2.0beta'
 gem 'inherited_resources'
 gem 'mini_record'
+gem 'state_machine'
 gem 'slim'
 
 gem 'i18n-js'
@@ -16,6 +17,7 @@ group :assets do
   gem 'sass-rails', '~> 3.1'
   gem 'bourbon'
   gem 'uglifier'
+  gem 'rasputin'
 end
 
 gem 'jquery-rails'
