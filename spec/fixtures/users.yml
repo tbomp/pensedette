@@ -1,34 +1,34 @@
 Bob:
   email: test@gmail.com
-  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvo...
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
   id: 1
 
 John:
   email: john@bemyapp.com
-  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvo...
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
   id: 2
 
 Pierre:
   email: pierre@apiclub.com
-  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvo...
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
   id: 3
 
 Paul:
   email: paul@chavard.net
-  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvo...
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
   id: 4
 
 Guillaume:
   email: gcerquant@gmail.com
-  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvo...
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
   id: 5
 
 Thomas:
   email: thomas@pense-dette.com
-  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvo...
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
   id: 6
 
 Mathieu:
   email: naon.mathieu@gmail.com
-  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvo...
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
   id: 7
