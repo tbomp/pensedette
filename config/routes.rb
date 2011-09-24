@@ -1,6 +1,8 @@
 Detteapp::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  
+  match 'friends' => 'welcome#test_get_fb_friends'
 
   match 'app' => 'welcome#app', :via => :get
 

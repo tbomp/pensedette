@@ -1,0 +1,8 @@
+h1 MyHello World
+- unless @facebook_friends.blank?
+  table
+    - for item in @facebook_friends do
+      tr
+        td = item
+- else
+  p No friend found.
