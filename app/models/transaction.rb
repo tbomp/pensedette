@@ -27,6 +27,7 @@ class Transaction < ActiveRecord::Base
   CANCELED = 3
   CLEARED  = 4
 
+  # Amounts are integers, valuated in cents.
   def amount_eur
     Math.round(amount / 100)
   end
