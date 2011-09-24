@@ -6,4 +6,5 @@ tmp/
 config/database.yml
 db/schema.rb
 config/initializers/devise_oauth.rb
+.rvmrc
 
