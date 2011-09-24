@@ -1,0 +1,34 @@
+Bob:
+  email: test@gmail.com
+  password: mdpbob
+  id:1
+  
+John:
+  email: john@bemyapp.com
+  password: mdpjohn
+  id:2
+    
+Pierre:
+  email: pierre@apiclub.com
+  password: mdppierre
+  id:3
+    
+Paul:
+  email: paul@chavard.net
+  password: mdppaul
+  id:4
+    
+Guillaume:
+  email: gcerquant@gmail.com
+  passwordp: mdpguillaume
+  id:5
+    
+Thomas:
+  email: thomas@pense-dette.com
+  password: mdpthomas
+  id:6
+    
+Mathieu:
+  email: naon.mathieu@gmail.com
+  password: mdpmathieu
+  id:7
