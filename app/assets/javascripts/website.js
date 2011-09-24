@@ -2,5 +2,4 @@
 // All this logic will automatically be available in application.js.
 //= require jquery
 //= require jquery_ujs
-//= require_tree ./website
 

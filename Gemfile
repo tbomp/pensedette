@@ -8,8 +8,9 @@ gem 'inherited_resources'
 gem 'mini_record'
 gem 'state_machine'
 gem 'slim'
+gem 'rack-cors', :require => 'rack/cors'
 
-gem 'i18n-js'
+#gem 'i18n-js'
 
 # Gems used only for assets and not required
 # in production environments by default.
