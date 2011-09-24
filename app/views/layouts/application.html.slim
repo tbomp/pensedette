@@ -6,5 +6,10 @@ html
     = javascript_include_tag "website"
     = csrf_meta_tags
   body
+    header
+      p.notice
+        = notice
+      p.alert
+        = alert
     = yield
 
