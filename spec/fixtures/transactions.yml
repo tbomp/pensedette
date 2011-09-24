@@ -2,26 +2,26 @@ Bob_reclamme_560_a_John:
   borrower_id: 2
   creditor_id: 1
   amount: 560
-  state: 0 #pending
-    
+  state: 0
+
 Pierre_doit_20_a_Paul:
   borrower_id: 3
   creditor_id: 4
   amount: 20
   state: 1 #accepted
-        
+
 Guillaume_nie_la_dette_de_25_reclammee_par_thomas:
   borrower_id: 5
   creditor_id: 6
   amount: 5
   state: 2 #rejected
-    
+
 Pierre_doit_500_a_Paul_seconde_dette:
   borrower_id: 3
   creditor_id: 4
   amount: 500
   state: 1 #accepted
-  
+
 John_doit_666_a_John:
   borrower_id: 2
   creditor_id: 1
