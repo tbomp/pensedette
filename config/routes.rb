@@ -6,7 +6,6 @@ Detteapp::Application.routes.draw do
 
   namespace :api, :format => :json do
     scope '1.0' do
-      match 'friends' => 'api/friends', :via => :get
       resources :friends, :only => [:index, :create, :destroy]
       resources :transactions, :except => [:new, :edit, :show, :destroy]
     end

@@ -1,10 +1,7 @@
 class Api::TransactionsController < InheritedResources::Base
   respond_to :json
   actions :all, :except => [:new, :edit, :show, :destroy]
-
-  def begin_of_association_chain
-    current_user
-  end
+  before_filter :authenticate_user!
 
   def update(options={}, &block)
     update! do |format|
@@ -17,6 +14,10 @@ class Api::TransactionsController < InheritedResources::Base
   end
 
   protected
+
+  def begin_of_association_chain
+    current_user
+  end
 
   def resource_params
     [request.request_parameters]

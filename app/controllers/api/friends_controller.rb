@@ -1,6 +1,16 @@
 class Api::FriendsController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
-    render :json => current_user.friendships
+    res = []
+    if params[:q]
+      res = []
+    else
+      res = current_user.friendships.map do |friendship|
+        friendship.friend
+      end
+    end
+    render :json => res
   end
 
   def create
