@@ -28,6 +28,10 @@ group :test, :development do
   gem 'pry'
 end
 
+group :development do
+  gem 'rails-footnotes', '>= 3.7.5.rc'
+end
+
 group :test do
   gem 'json_spec'
 end
