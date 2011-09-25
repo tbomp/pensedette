@@ -1,6 +1,6 @@
-<header>
-</header>
-{{#collection contentBinding="Dette.Friends" tagName="ul"}}
+{{#collection contentBinding="Dette.FriendsList" tagName="ul"}}
+  <img {{bindAttr src="content.avatar"}}/>
   {{content.name}}
-  {{content.uid}}
+  {{content.id}}
 {{/collection}}
+
