@@ -52,23 +52,27 @@ require_once("sources/requetes.php");
 
 <!-- Start of first page: #splash -->
 
-<div data-role="page" id="splash" data-theme="e">
+<div data-role="page" id="splash">
 
-    <div data-role="header" data-position="fixed" data-theme="b">
-        <h1>Pense-dette</h1>
+    <div data-role="header" data-position="fixed">
+        <img src="./img/titre.png" />
     </div>
 
-    <div class="content" data-role="content" data-theme="e">  
+    <div class="content" data-role="content">  
 		<p>
-			Bienvenue sur la WebApp pense-dette ! Beta-testeurs, Attention !! <br />
+			Bienvenu sur la WebApp pense-dette ! Beta-testeurs, Attention !! <br />
 			1 - Vous allez connecter votre compte facebook afin de recuperer vos contacts. <br />
 			2 - Vous pouvez visualiser l'etat de vos comptes avec vos proches. <br />
 			3 - Soumettre de futurs notes...<br />
 			4 - ...
 		</p>
 
-		<a href="#fbConnect" data-transition="pop"><img src="./img/fb-connect.png" /></a>
+		<a href="#fbConnect" data-transition="slide"><img src="./img/fb-connect.png" /></a>
 	</div>
+	
+    <div data-role="footer" class ="firstfooters" data-id="homefooter" data-position="fixed">
+
+    </div>
 		
 </div>
 
@@ -76,10 +80,10 @@ require_once("sources/requetes.php");
 
 <!-- Start of Popup page: #fbConnect -->
 
-<div data-role="page" id="fbConnect" data-theme="e">
+<div data-role="page" id="fbConnect">
 
-    <div data-role="header" data-position="fixed" data-theme="b">
-        <h1>fbConnect</h1>
+    <div data-role="header" data-position="fixed">
+        <img src="./img/titre.png" />
     </div>
 	
 <script>	
@@ -119,14 +123,18 @@ function ajaxtest () {
 
 </script>
 
-    <div id="fbConnectDiv" class="content" data-role="content" data-theme="e">  
+    <div id="fbConnectDiv" class="content" data-role="content">  
 		<p>
 			facebook login...
 		</p>
 		<a href="#" data-role="button" data-icon="plus" data-theme="c" onclick="ajaxtest();">Test</a>
 
-		<a href="#accueil" data-role="button" data-icon="back" data-transition="fade" data-theme="c">Validez</a>
+		<a href="#accueil" data-role="button" data-icon="back" data-transition="slide" data-theme="c">Validez</a>
 	</div>
+	
+    <div data-role="footer" class ="firstfooters" data-id="homefooter" data-position="fixed">
+
+    </div>
 		
 </div>
 
@@ -134,19 +142,23 @@ function ajaxtest () {
 
 <!-- Start of second page: #accueil -->
 
-<div data-role="page" id="accueil" data-theme="e">
+<div data-role="page" id="accueil">
 
-    <div data-role="header" data-position="fixed" data-theme="b">
-        <h1>Accueil</h1>
-		<a href="#" data-role="button" data-inline="true" data-icon="delete" data-theme="e" class="ui-btn-right" onclick="">Deconnexion</a>
+    <div data-role="header" data-position="fixed">
+        <img src="./img/titre.png" />
     </div>
 
-    <div class="content" data-role="content" data-theme="e">  
-		<a href="#newOrder" data-role="button" disabled="flase" data-icon="plus" data-direction="slide" data-theme="c">Envoyer une note</a>
-		<a href="#cashBoard" data-role="button" disabled="true" data-icon="grid" data-direction="slide" data-theme="c">Visualiser le solde</a>
-		<p>X Operations en cours : </p>
-		<a href="#pending" data-role="button" disabled="true" data-icon="info" data-direction="slide" data-theme="c">Voir</a>
+    <div class="content" data-role="content">  
+		<a href="#newOrder" data-transition="slide"><img src="./img/btn_envoyer-une-dette.png" /></a>
+		<br />
+		<a href="#cashBoard" data-transition="slide"><img src="./img/btn_visualiser-mes-comptes.png" /></a>
+		<br />		
+		<a href="#pending" data-transition="slide"><img src="./img/btn_reponse-en-attente.png" /></a>
 	</div>
+	
+    <div data-role="footer" class ="firstfooters" data-id="homefooter" data-position="fixed">
+
+    </div>
 	
 </div>
 
@@ -154,15 +166,14 @@ function ajaxtest () {
 
 <!-- Start of third page: #pending -->
 
-<div data-role="page" id="pending" data-theme="e">
+<div data-role="page" id="pending">
 
-    <div data-role="header" data-position="fixed" data-theme="b">
+    <div data-role="header" data-position="fixed">
 		<!-- <a href="#accueil" data-role="button" data-inline="true" data-icon="home" data-direction="reverse" data-theme="e">Accueil</a> -->
-        <h1>En attente...</h1>
-		<a href="#" data-role="button" data-inline="true" data-icon="delete" data-theme="e" class="ui-btn-right" onclick="">Deconnexion</a>
+        <img src="./img/titre.png" />
     </div>
 
-    <div class="content" data-role="content" data-theme="e"> 
+    <div class="content" data-role="content"> 
 
 		<p>
 			Je dois ... X ...
@@ -177,12 +188,13 @@ function ajaxtest () {
 		</p>
 	</div>
 		
-	<div data-role="footer" data-id="homefooter" data-position="fixed" data-theme="b">
+	<div data-role="footer" data-id="homefooter" data-position="fixed">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#newOrder" data-icon="plus" data-iconpos="top">Note</a></li>
-				<li><a href="#cashBoard" data-icon="grid" data-iconpos="top">Solde</a></li>
-				<li><a href="#pending" class="ui-btn-active ui-state-persis" data-icon="info" data-iconpos="top">Attente</a></li>
+				<li><a href="#newOrder" data-icon="plus" data-transition="slideup" data-iconpos="top">Note</a></li>
+				<li><a href="#cashBoard" data-icon="grid" data-transition="slideup" data-iconpos="top">Solde</a></li>
+				<li><a href="#pending" class="activeLinks" data-transition="slideup" data-icon="info" data-iconpos="top">Attente</a></li>
+				<li><a href="#" data-icon="delete" data-iconpos="top" onclick="">Deconnexion</a>
 			</ul>
 		</div>
     </div>
@@ -197,15 +209,14 @@ function ajaxtest () {
 <!-- Start of cashBoard page: #cashBoard -->
 
 
-<div data-role="page" id="cashBoard" data-theme="e">
+<div data-role="page" id="cashBoard">
 
-    <div data-role="header" data-position="fixed" data-theme="b">
+    <div data-role="header" data-position="fixed">
 		<!-- <a href="#accueil" data-role="button" data-inline="true" data-icon="home" data-direction="reverse" data-theme="e">Accueil</a> -->
-        <h1>Pense-dette</h1>
-		<a href="#" data-role="button" data-inline="true" data-icon="delete" data-theme="e" class="ui-btn-right" onclick="">Deconnexion</a>
+        <img src="./img/titre.png" />
     </div><!-- /header -->
 
-    <div class="content" data-role="content" data-theme="c">  
+    <div class="content" data-role="content">  
         
 <ul id="cbList">
  
@@ -217,8 +228,8 @@ $options = array();
 $friend = curl_get($url, $get, $options);
 $friends = json_decode($friend);
 
-    // $fs = $friends->response->friends->items;
-	$fs = array();
+    $fs = $friends->response->friends->items;
+	// $fs = array();
     $i=0;
     foreach ($fs as $f) {
         $i++;
@@ -254,12 +265,13 @@ $friends = json_decode($friend);
 		
     </div>
 	
-	<div data-role="footer" data-id="homefooter" data-position="fixed" data-theme="b">
+	<div data-role="footer" data-id="homefooter" data-position="fixed">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#newOrder" data-icon="plus" data-iconpos="top">Note</a></li>
-				<li><a href="#cashBoard" class="ui-btn-active ui-state-persis" data-icon="grid" data-iconpos="top">Solde</a></li>
-				<li><a href="#pending" data-icon="info" data-iconpos="top">Attente</a></li>
+				<li><a href="#newOrder" data-icon="plus" data-transition="slideup" data-iconpos="top">Note</a></li>
+				<li><a href="#cashBoard" class="activeLinks" data-transition="slideup" data-icon="grid" data-iconpos="top">Solde</a></li>
+				<li><a href="#pending" data-icon="info" data-transition="slideup" data-iconpos="top">Attente</a></li>
+				<li><a href="#" data-icon="delete" data-iconpos="top" onclick="">Deconnexion</a>
 			</ul>
 		</div>
     </div>
@@ -272,15 +284,13 @@ $friends = json_decode($friend);
 <!-- Start of Historic page: #two -->
 
 
-<div data-role="page" id="historic" data-theme="e">
+<div data-role="page" id="historic">
 
-    <div data-role="header" data-position="fixed" data-theme="b">
-		<a href="#cashBoard" data-role="button" data-inline="true" data-icon="arrow-l" data-direction="reverse" data-theme="e">Retour</a>
-        <h1>Historique</h1>
-		<a href="#" data-role="button" data-inline="true" data-icon="delete" data-theme="e" class="ui-btn-right" onclick="">Deconnexion</a>
+    <div data-role="header" data-position="fixed">
+        <img src="./img/titre.png" />
     </div><!-- /header -->
 
-    <div class="content" data-role="content" data-theme="e"> 
+    <div class="content" data-role="content"> 
 	
 	
 <ul id="cbList2">
@@ -325,12 +335,13 @@ $friends = json_decode($friend);
 
     </div>
 	
-	<div data-role="footer" data-id="homefooter" data-position="fixed" data-theme="b">
+	<div data-role="footer" data-id="homefooter" data-position="fixed">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#newOrder" data-icon="plus" data-iconpos="top">Note</a></li>
-				<li><a href="#cashBoard" data-icon="grid" data-iconpos="top">Solde</a></li>
-				<li><a href="#pending" data-icon="info" data-iconpos="top">Attente</a></li>
+				<li><a href="#newOrder" data-icon="plus" data-transition="slideup" data-iconpos="top">Note</a></li>
+				<li><a href="#cashBoard" data-icon="grid" data-transition="slideup" data-iconpos="top">Solde</a></li>
+				<li><a href="#pending" data-icon="info" data-transition="slideup" data-iconpos="top">Attente</a></li>
+				<li><a href="#" data-icon="delete" data-iconpos="top" onclick="">Deconnexion</a>
 			</ul>
 		</div>
     </div>
@@ -340,19 +351,18 @@ $friends = json_decode($friend);
 
 
 <!-- Start of newOrder page: #newOrder -->
-<div data-role="page" id="newOrder" data-theme="e">
+<div data-role="page" id="newOrder">
 
-    <div data-role="header" data-position="fixed" data-theme="b">
+    <div data-role="header" data-position="fixed">
 		<!-- <a href="#accueil" data-role="button" data-inline="true" data-icon="home" data-direction="reverse" data-theme="e">Accueil</a> -->
-        <h1>Qui et Combien ?</h1>
-		<a href="#" data-role="button" data-inline="true" data-icon="delete" data-theme="e" class="ui-btn-right" onclick="">Deconnexion</a>
+        <img src="./img/titre.png" />
     </div><!-- /header -->
 
-    <div class="content" data-role="content" data-theme="e"> 
+    <div class="content" data-role="content"> 
 	
 	<div data-role="fieldcontain">
 		<fieldset data-role="controlgroup" data-type="horizontal">
-				<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
+				<input type="radio" src="./img/btn_je-dois.png" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
 				<label for="radio-choice-1">Je dois</label>
 
 				<input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
@@ -391,12 +401,13 @@ $friends = json_decode($friend);
 
     </div><!-- /content -->
 	
-	<div data-role="footer" data-id="homefooter" data-position="fixed" data-theme="b">
+	<div data-role="footer" data-id="homefooter" data-position="fixed">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#newOrder" class="ui-btn-active ui-state-persis" data-icon="plus" data-iconpos="top">Note</a></li>
-				<li><a href="#cashBoard" data-icon="grid" data-iconpos="top">Solde</a></li>
-				<li><a href="#pending" data-icon="info" data-iconpos="top">Attente</a></li>
+				<li><a href="#newOrder" class="activeLinks" data-transition="slideup" data-icon="plus" data-iconpos="top">Note</a></li>
+				<li><a href="#cashBoard" data-icon="grid" data-transition="slideup" data-iconpos="top">Solde</a></li>
+				<li><a href="#pending" data-icon="info" data-transition="slideup" data-iconpos="top">Attente</a></li>
+				<li><a href="#" data-icon="delete" data-iconpos="top" onclick="">Deconnexion</a>
 			</ul>
 		</div>
     </div>

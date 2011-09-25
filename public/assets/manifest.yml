@@ -1,10 +1,10 @@
 ---
-ajax-loader.png: ajax-loader-ea57088b2e911885097e93ca523abb53.png
-icon-search-black.png: icon-search-black-306c31fb1dc4e2b65f1bce48bd5b2ac9.png
-icons-18-black.png: icons-18-black-ff8b547e2ac8d3fbd373b2e1554752ae.png
-icons-18-white.png: icons-18-white-7c914966ac0e7dd5237e01f10c1fcf19.png
-icons-36-black.png: icons-36-black-37051f201d2bd150d0ff28d59b4e9081.png
-icons-36-white.png: icons-36-white-e2a56a823bb59235a293dd46ffb6fb94.png
+images/ajax-loader.png: images/ajax-loader-ea57088b2e911885097e93ca523abb53.png
+images/icon-search-black.png: images/icon-search-black-306c31fb1dc4e2b65f1bce48bd5b2ac9.png
+images/icons-18-black.png: images/icons-18-black-ff8b547e2ac8d3fbd373b2e1554752ae.png
+images/icons-18-white.png: images/icons-18-white-7c914966ac0e7dd5237e01f10c1fcf19.png
+images/icons-36-black.png: images/icons-36-black-37051f201d2bd150d0ff28d59b4e9081.png
+images/icons-36-white.png: images/icons-36-white-e2a56a823bb59235a293dd46ffb6fb94.png
 pd/btn_1.png: pd/btn_1-4a8671b3d4e78d8b7769d4d2ff5461e2.png
 pd/btn_2.png: pd/btn_2-2c61e231d0889133dc5d034f63b4191c.png
 pd/btn_3.png: pd/btn_3-9400dd593ca0b9750ca344d5841514ea.png
@@ -39,4 +39,4 @@ jquery.mobile.js: jquery-ac072d6cb210c110e07e75daa7a73a16.mobile.js
 jquery-ui.min.js: jquery-ui-7e33882a28fc84ad0e0e47e46cbf901c.min.js
 jquery.min.js: jquery-8a50feed8d29566738ad005e19fe1c2d.min.js
 application.js: application-cf98e9582e6e4299c2599bc31494739c.js
-application.css: application-ae10e4a70308299101ae349dea74a4cd.css
+application.css: application-d7732008b1feef158510a64fe9ac8008.css
