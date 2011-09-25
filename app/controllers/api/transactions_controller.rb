@@ -8,7 +8,6 @@ class Api::TransactionsController < InheritedResources::Base
   end
 
   def create
-    Rails.logger.debug(resource_params)
     creditor_id = resource_params[:creditor_id]
     creditor_uid = resource_params[:creditor_uid]
     creditor_account = nil
@@ -38,10 +37,9 @@ class Api::TransactionsController < InheritedResources::Base
       creditor_account = current_user.account
     end
     if borrower_account && creditor_account
-      @resource = Transaction.create :creditor => creditor_account,
-        :borrower => borrower_account, :amount => resource_params[:amount], :state => 0
-      #create!
-      render :json => @resource
+      resource = Transaction.create :creditor => creditor_account, :borrower => borrower_account,
+        :amount => resource_params[:amount], :label => resource_params[:label], :state => 0
+      render :json => resource
     else
       head 400
     end

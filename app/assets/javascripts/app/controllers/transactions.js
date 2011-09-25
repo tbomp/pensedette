@@ -1,5 +1,5 @@
 
-Dette.TransactionsList = SC.ArrayProxy.extend({
+Dette.TransactionsList = SC.ArrayProxy.create({
   content: []
 });
 

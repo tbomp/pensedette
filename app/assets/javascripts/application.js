@@ -5,11 +5,10 @@
 // the compiled file.
 //
 //= require jquery
+//= require ./app/config
 //= require jquery.mobile
 //= require sproutcore
-//= require sproutcore-datastore
 
-//= require_tree ./lib
 //= require ./app/main
 //= require_tree ./app
 
