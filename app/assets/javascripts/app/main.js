@@ -48,5 +48,6 @@ SC.$(function(){
   });
 
   Dette.TransactionsCollection.appendTo('.transactions-list');
+
 });
 

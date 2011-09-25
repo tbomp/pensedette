@@ -7,53 +7,18 @@
     </div>
 
     <div class="content" data-role="content" data-theme="e">  
-		<p>
-			Bienvenue sur la WebApp pense-dette ! Beta-testeurs, Attention !! <br />
-			1 - Vous allez connecter votre compte facebook afin de recuperer vos contacts. <br />
-			2 - Vous pouvez visualiser l'etat de vos comptes avec vos proches. <br /> <!-- ' -->
-			3 - Soumettre de futurs notes...<br />
-			4 - ...
-		</p>
+		<p>Bienvenue sur la WebApp pense-dette ! Beta-testeurs, Attention !!</p>
+		<ol>
+      <li> - Vous allez connecter votre compte facebook afin de recuperer vos contacts. </li>
+		  <li> - Vous pouvez visualiser l'etat de vos comptes avec vos proches. </li>
+			<li> - Soumettre de futurs notes...</li>
+		</ol>
 
 		  <% resource_class.omniauth_providers.each do |provider| %>
-			<a href="<%= omniauth_authorize_path(resource_name, provider) %>" data-transition="pop">
-				<img src="<%= asset_path "/design/img/fb-connect.png" %>" />
-			</a>
+			 <a href="<%= omniauth_authorize_path(resource_name, provider) %>" rel="external" data-transition="pop">
+			   <img src="<%= asset_path "/design/img/fb-connect.png" %>" />
+			 </a>
 		  <% end %>
 	</div>
 		
 </div>
-
-
-
-<div data-role="page" id="fbConnect" data-theme="e">
-
-    <div data-role="header" data-position="fixed" data-theme="b">
-        <h1>fbConnect</h1>
-    </div>
-
-
-    <div id="fbConnectDiv" class="content" data-role="content" data-theme="e">  
-		<p>
-			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-			  <div><%= f.label :email %><br />
-			  <%= f.email_field :email %></div>
-
-			  <div><%= f.label :password %><br />
-			  <%= f.password_field :password %></div>
-
-			  <% if devise_mapping.rememberable? -%>
-			    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-			  <% end -%>
-
-			  <div><%= f.submit "Sign in" %></div>
-			<% end %>
-			
-		</p>
-		<a href="#" data-role="button" data-icon="plus" data-theme="c" onclick="ajaxtest();">Test</a>
-
-		<a href="#accueil" data-role="button" data-icon="back" data-transition="fade" data-theme="c">Validez</a>
-	</div>
-		
-</div>
-<%= render :partial => "devise/shared/links" %>
