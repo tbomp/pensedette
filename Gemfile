@@ -31,7 +31,7 @@ group :test, :development do
 end
 
 group :production do
-  gem 'activerecord-postgresql-adapte'
+  gem 'activerecord-postgresql-adapter'
 end
 
 group :development do
