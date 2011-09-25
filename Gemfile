@@ -19,6 +19,7 @@ group :assets do
   gem 'bourbon'
   gem 'uglifier'
   gem 'rasputin'
+  #gem 'rasputin-jui'
 end
 
 gem 'jquery-rails'
