@@ -30,6 +30,10 @@ group :test, :development do
   gem 'pry'
 end
 
+group :production do
+  gem 'activerecord-postgresql-adapte'
+end
+
 group :development do
   gem 'rails-footnotes', '>= 3.7.5.rc'
 end
