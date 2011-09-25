@@ -60,7 +60,7 @@ require_once("sources/requetes.php");
 
     <div class="content" data-role="content" data-theme="e">  
 		<p>
-			Bienvenu sur la WebApp pense-dette ! Beta-testeurs, Attention !! <br />
+			Bienvenue sur la WebApp pense-dette ! Beta-testeurs, Attention !! <br />
 			1 - Vous allez connecter votre compte facebook afin de recuperer vos contacts. <br />
 			2 - Vous pouvez visualiser l'etat de vos comptes avec vos proches. <br />
 			3 - Soumettre de futurs notes...<br />
