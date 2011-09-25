@@ -1,0 +1,10 @@
+header
+  h1 Pense Dette
+  =link_to 'Decconnecion', destroy_user_session_path, :method => :delete
+handlebars:
+  {{view elementId="accueil" classNames="page" templateName="app/accueil"}}
+  {{view elementId="new_transaction" classNames="page" templateName="app/new"}}
+  {{view elementId="transactions" classNames="page" templateName="app/transactions"}}
+
+#facebook_login
+  //= link_to "Connect with Facebook", omniauth_authorize_path(resource_name, :facebook)
