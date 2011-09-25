@@ -17,7 +17,7 @@
 
 		  <% resource_class.omniauth_providers.each do |provider| %>
 			<a href="<%= omniauth_authorize_path(resource_name, provider) %>" data-transition="pop">
-				<img src="../design/img/fb-connect.png" />
+				<img src="<%= asset_path "/design/img/fb-connect.png" %>" />
 			</a>
 		  <% end %>
 	</div>
