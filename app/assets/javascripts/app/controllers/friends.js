@@ -1,2 +1,4 @@
-Dette.FriendsList = SC.ArrayProxy.create({});
+Dette.FriendsList = SC.ArrayProxy.create({
+  content: []
+});
 

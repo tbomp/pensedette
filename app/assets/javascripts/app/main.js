@@ -37,10 +37,15 @@ Dette.test = function() {
 
 SC.$(function(){
   Dette.listFriends(function(data){
-    Dette.FriendsList.set('content', []);
     data.forEach(function(user) {
       Dette.FriendsList.pushObject(Dette.User.create(user));
     });
-  })
+  });
+
+  Dette.listFriends(function(data){
+    data.forEach(function(user) {
+      Dette.FriendsList.pushObject(Dette.Transaction.create(user));
+    });
+  });
 });
 
