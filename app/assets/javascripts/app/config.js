@@ -1,6 +1,9 @@
 $(document).bind("mobileinit", function(){
-  //apply overrides here
   console.log('mobileinit');
+  $.extend($.mobile , {
+    autoInitializePage: true
+  });
+  //autoInitializePage
   //ajaxEnabled: false,
   //hashListeningEnabled: true
 });
