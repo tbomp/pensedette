@@ -10,17 +10,16 @@
 		<p>
 			Bienvenue sur la WebApp pense-dette ! Beta-testeurs, Attention !! <br />
 			1 - Vous allez connecter votre compte facebook afin de recuperer vos contacts. <br />
-			2 - Vous pouvez visualiser l'etat de vos comptes avec vos proches. <br />
+			2 - Vous pouvez visualiser l'etat de vos comptes avec vos proches. <br /> <!-- ' -->
 			3 - Soumettre de futurs notes...<br />
 			4 - ...
 		</p>
 
-
-		  <%- resource_class.omniauth_providers.each do |provider| %>
+		  <% resource_class.omniauth_providers.each do |provider| %>
 			<a href="<%= omniauth_authorize_path(resource_name, provider) %>" data-transition="pop">
-				<img src="./img/fb-connect.png" />
+				<img src="../design/img/fb-connect.png" />
 			</a>
-		  <% end -%>
+		  <% end %>
 	</div>
 		
 </div>
