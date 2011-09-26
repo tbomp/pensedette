@@ -1,42 +1,6 @@
 
-Dette = SC.Application.create({
-  states: SC.Object.create({
-    home: true,
-    'new': false,
-    transactions: false,
-    showHome: function() {
-      this.setProperties({
-        transactions: false,
-        'new': false,
-        home: true,
-        pending: false
-      });
-    },
-    showNew: function() {
-      this.setProperties({
-        transactions: false,
-        'new': true,
-        home: false,
-        pending: false
-      });
-    },
-    showTransactions: function() {
-      this.setProperties({
-        transactions: true,
-        'new': false,
-        home: false,
-        pending: false
-      });
-    },
-    showPending: function() {
-      this.setProperties({
-        transactions: false,
-        'new': false,
-        home: false,
-        pending: true
-      });
-    }
-  })
+PD = SC.Application.create({
+  store: SC.Store.create().from()
 });
 
 Dette.listFriends = function(callback) {
@@ -72,18 +36,21 @@ Dette.test = function() {
   });
 };
 
-SC.$(function(){
-  Dette.listFriends(function(data){
-    data.forEach(function(user) {
-      Dette.FriendsList.pushObject(Dette.User.create(user));
-    });
+// SC.$(function(){
+//   Dette.listFriends(function(data){
+//     data.forEach(function(user) {
+//       Dette.FriendsList.pushObject(Dette.User.create(user));
+//     });
 
-    Dette.listTransactions(function(data){
-      data.forEach(function(trans) {
-        Dette.TransactionsList.pushObject(Dette.Transaction.create(trans));
-      });
-    });
-  });
-  //Dette.TransactionsCollection.appendTo('.transactions-list');
+//     Dette.listTransactions(function(data){
+//       data.forEach(function(trans) {
+//         Dette.TransactionsList.pushObject(Dette.Transaction.create(trans));
+//       });
+//     });
+//   });
+//   //Dette.TransactionsCollection.appendTo('.transactions-list');
+// });
+
+SC.$(document).ready(function(){
+  //PD.statechart.    
 });
-

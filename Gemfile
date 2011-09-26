@@ -8,7 +8,6 @@ gem 'inherited_resources'
 gem 'mini_record'
 gem 'state_machine'
 gem 'slim'
-gem 'rack-cors', :require => 'rack/cors'
 
 #gem 'i18n-js'
 
@@ -19,7 +18,6 @@ group :assets do
   gem 'bourbon'
   gem 'uglifier'
   gem 'rasputin'
-  #gem 'rasputin-jui'
 end
 
 gem 'jquery-rails'
