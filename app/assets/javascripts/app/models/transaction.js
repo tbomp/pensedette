@@ -1,4 +1,4 @@
-PD.Transaction = SC.Record.extend({
+PD.Transaction = PD.Record.extend({
   amount: SC.Record.attr(Number),
   label: SC.Record.attr(String),
   state: SC.Record.attr(Number, {defaultValue: 0}),
@@ -10,6 +10,6 @@ PD.Transaction = SC.Record.extend({
   }.property('amount').cacheable()
 });
 
-Dette.Transaction.PENDING = 0;
-Dette.Transaction.ACCEPTED = 1;
-Dette.Transaction.REGECTED = 2;
+PD.Transaction.PENDING = 0;
+PD.Transaction.ACCEPTED = 1;
+PD.Transaction.REGECTED = 2;

@@ -1,7 +1,8 @@
-Dette.User = SC.Record.extend({
-  uid: SC.Record.attr(String),
+PD.Friend = PD.Record.extend({
+  //uid: 
   name: SC.Record.attr(String),
   source: SC.Record.attr(String),
+  //cercles:
 
   avatar: function(){
     if (this.get('source') === 'facebook') {
