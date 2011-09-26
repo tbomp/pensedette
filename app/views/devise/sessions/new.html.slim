@@ -1,0 +1,17 @@
+#login.page
+  header
+    h1 Pense-Dette
+  .content
+    p Bienvenue sur la WebApp Pense-Dette ! Beta-testeurs, Attention !!
+    ol
+      li
+        |- Vous allez connecter votre compte facebook afin de recuperer vos contacts.
+      li
+        |- Vous pouvez visualiser l'etat de vos comptes avec vos proches.
+      li
+        |- Soumettre de futurs notes...
+
+    ul.list.methods
+      - resource_class.omniauth_providers.each do |provider|
+        li
+          = link_to omniauth_authorize_path(resource_name, provider), image_tag "#{provider}-connect.png"

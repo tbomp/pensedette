@@ -7,5 +7,3 @@ config/database.yml
 db/schema.rb
 .rvmrc
 db/test.sqlite3-journal
-app/assets/javascripts/i18n/translations.js
-

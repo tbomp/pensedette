@@ -23,8 +23,7 @@ class User < ActiveRecord::Base
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["user_hash"]
         user.email = data["email"]
-        user.uid = session["devise.facebook_data"]["uid"]
-        create_account user
+        create_account user, session["devise.facebook_data"]["uid"]
         user
       end
     end
@@ -35,16 +34,16 @@ class User < ActiveRecord::Base
     if user = User.find_by_email(data["email"])
       user
     else # Create a user with a stub password. 
-      user = User.create(:email => data["email"], :password => Devise.friendly_token[0,20], :uid => access_token["uid"])
-      create_account user
+      user = User.create :email => data["email"], :password => Devise.friendly_token[0,20]
+      create_account user, access_token["uid"]
       user
     end
   end
 
-  def self.create_account user
-    account = Account.where(:uid => user.uid).first
+  def self.create_account user, uid
+    account = Account.find_by_uid(uid)
     if !account
-      Account.create :user => user, :uid => user.uid
+      Account.create :user => user, :uid => uid
     else
       account.update_attributes :user => user
     end
