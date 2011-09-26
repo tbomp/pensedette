@@ -1,4 +1,7 @@
 Dette.Transaction = SC.Object.extend({
+  amountEU: function() {
+    return Math.round(this.get('amount') / 100);
+  }.property('amount').cacheable()
 });
 
 Dette.Transaction.PENDING = 0;

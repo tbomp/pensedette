@@ -1,5 +1,43 @@
 
-Dette = SC.Application.create({});
+Dette = SC.Application.create({
+  states: SC.Object.create({
+    home: true,
+    'new': false,
+    transactions: false,
+    showHome: function() {
+      this.setProperties({
+        transactions: false,
+        'new': false,
+        home: true,
+        pending: false
+      });
+    },
+    showNew: function() {
+      this.setProperties({
+        transactions: false,
+        'new': true,
+        home: false,
+        pending: false
+      });
+    },
+    showTransactions: function() {
+      this.setProperties({
+        transactions: true,
+        'new': false,
+        home: false,
+        pending: false
+      });
+    },
+    showPending: function() {
+      this.setProperties({
+        transactions: false,
+        'new': false,
+        home: false,
+        pending: true
+      });
+    }
+  })
+});
 
 Dette.listFriends = function(callback) {
   $.getJSON('/api/1.0/friends', callback);
@@ -39,15 +77,13 @@ SC.$(function(){
     data.forEach(function(user) {
       Dette.FriendsList.pushObject(Dette.User.create(user));
     });
-  });
 
-  Dette.listTransactions(function(data){
-    data.forEach(function(user) {
-      Dette.TransactionsList.pushObject(Dette.Transaction.create(user));
+    Dette.listTransactions(function(data){
+      data.forEach(function(trans) {
+        Dette.TransactionsList.pushObject(Dette.Transaction.create(trans));
+      });
     });
   });
-
-  Dette.TransactionsCollection.appendTo('.transactions-list');
-
+  //Dette.TransactionsCollection.appendTo('.transactions-list');
 });
 

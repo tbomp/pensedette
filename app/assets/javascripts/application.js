@@ -5,8 +5,6 @@
 // the compiled file.
 //
 //= require jquery
-//= require ./app/config
-//= require jquery.mobile
 //= require sproutcore
 
 //= require ./app/main

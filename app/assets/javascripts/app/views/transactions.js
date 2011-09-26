@@ -4,7 +4,11 @@ Dette.TransactionsCollection = SC.CollectionView.create({
   contentBinding: 'Dette.TransactionsList',
   itemViewClass: SC.View.extend({
     classNames: ['cbListEntriesPlus'],
-    templateName: 'app/transaction'
+    templateName: 'app/transaction',
+    didInsertElement: function(){
+      console.log('test');
+      //amountEU
+    }
   })
 });
 
