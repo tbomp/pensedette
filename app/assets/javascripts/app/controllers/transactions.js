@@ -1,5 +1,4 @@
 
-Dette.TransactionsList = SC.ArrayProxy.create({
+PD.Transactions = SC.ArrayProxy.create({
   content: []
 });
-

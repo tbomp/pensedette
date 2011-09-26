@@ -4,9 +4,7 @@ require File.expand_path('../boot', __FILE__)
 require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
-require "active_resource/railtie"
 require "sprockets/railtie"
-# require "rails/test_unit/railtie"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -15,7 +13,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Detteapp
+module PenseDette
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -51,12 +49,12 @@ module Detteapp
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.middleware.use Rack::Cors do
-      allow do
-        origins '*'
-        resource '/api/1.0/*', :headers => :any, :methods => [:get, :post, :put]
-      end
-    end
+    # config.middleware.use Rack::Cors do
+    #   allow do
+    #     origins '*'
+    #     resource '/api/1.0/*', :headers => :any, :methods => [:get, :post, :put]
+    #   end
+    # end
   end
 end
 

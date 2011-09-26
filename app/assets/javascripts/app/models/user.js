@@ -1,6 +1,14 @@
-Dette.User = SC.Object.extend({
+Dette.User = SC.Record.extend({
+  uid: SC.Record.attr(String),
+  name: SC.Record.attr(String),
+  source: SC.Record.attr(String),
+
   avatar: function(){
-    return "http://graph.facebook.com/%@/picture".fmt(this.get('id'));
-  }.property('id').cacheable()
+    if (this.get('source') === 'facebook') {
+      return "http://graph.facebook.com/%@/picture".fmt(this.get('uid'));
+    } else {
+      return PD.defaultAvatar;
+    }
+  }.property('uid').cacheable()
 });
 
