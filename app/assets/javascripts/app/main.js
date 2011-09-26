@@ -14,9 +14,9 @@ Dette.listTransactions = function(callback) {
 Dette.createTransaction = function(uid, amount, borrow, callback) {
   var data = {amount: amount};
   if (borrow) {
-    data.creditor_uid = uid;
+    data.creditor = uid;
   } else {
-    data.borrower_uid = uid;
+    data.borrower = uid;
   }
   $.ajax('/api/1.0/transactions', {
     data: JSON.stringify(data),

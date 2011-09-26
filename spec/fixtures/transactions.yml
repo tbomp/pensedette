@@ -3,39 +3,37 @@ Bob_reclamme_560_a_John:
   creditor_id: 1
   amount: 560
   state: 0
+  label: Bob_reclamme_560_a_John
+  credited: false
 
 Pierre_doit_20_a_Paul:
   borrower_id: 3
   creditor_id: 4
   amount: 20
   state: 1 #accepted
+  label: Pierre_doit_20_a_Paul
+  credited: true
 
 Guillaume_nie_la_dette_de_25_reclammee_par_thomas:
   borrower_id: 5
   creditor_id: 6
   amount: 5
   state: 2 #rejected
+  label: Guillaume_nie_la_dette_de_25_reclammee_par_thomas
+  credited: false
 
 Pierre_doit_500_a_Paul_seconde_dette:
   borrower_id: 3
   creditor_id: 4
   amount: 500
   state: 1 #accepted
+  label: Pierre_doit_500_a_Paul_seconde_dette
+  credited: true
 
 John_doit_666_a_John:
   borrower_id: 2
   creditor_id: 1
   amount: 666
   state: 1 #accepted
-
-Pierre_a_du_300_a_Paul:
-  borrower_id: 3
-  creditor_id: 4
-  amount: 300
-  state: 4 #cleared
-
-Pierre_annule_la_demande_de_dette_a_Guillaume:
-  borrower_id: 5
-  creditor_id: 3
-  amount: 1000
-  state: 5 #accepted
+  label: John_doit_666_a_John
+  credited: true

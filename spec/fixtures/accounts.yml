@@ -1,0 +1,45 @@
+Bobs_Account:
+  total: 0
+  uid: test@gmail.com
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
+  user_id: 1
+  id: 1
+
+Johns_Account:
+  total: 0
+  uid: john@bemyapp.com
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
+  user_id: 2
+  id: 2
+
+Pierres_Account:
+  total: 0
+  uid: pierre@apiclub.com
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
+  user_id: 3
+  id: 3
+
+Pauls_Account:
+  total: 0
+  uid: paul@chavard.net
+  encrypted_password: $2a$10$trdRjsMul3j.Do3DO7FKxOwcTwv1HktmSwhxvF8psdvoKfUw2wcz.
+  user_id: 4
+  id: 4
+
+Guillaumes_Account:
+  total: 0
+  uid: gcerquant@gmail.com
+  user_id: 5
+  id: 5
+
+Thomas_Account:
+  total: 0
+  uid: thomas@pense-dette.com
+  user_id: 6
+  id: 6
+
+Mathieu_Account:
+  total: 0
+  uid: naon.mathieu@gmail.com
+  user_id: 7
+  id: 7

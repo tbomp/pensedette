@@ -2,7 +2,7 @@ class Account < ActiveRecord::Base
   belongs_to :user
 
   col :user, :as => :references
-  col :uid, :as => :integer
+  col :uid, :as => :string
   col :total, :as => :integer, :default => 0
 
   validates :total,
@@ -12,6 +12,10 @@ class Account < ActiveRecord::Base
 
   def transactions
     Transaction.where('borrower_id = ? OR creditor_id = ?', id, id)
+  end
+
+  def as_json options={}
+    super :only => [:uid, :total]
   end
 end
 Account.auto_upgrade!
