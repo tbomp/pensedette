@@ -1,13 +1,16 @@
-<div data-role="page" id="accueil" data-theme="e">
-  <div data-role="header" data-position="fixed" data-theme="b">
-    <h1>Accueil</h1>
-    <a href="<%=destroy_user_session_path%>" rel="external" data-role="button" data-inline="true" data-icon="delete" data-theme="e" class="ui-btn-right">Deconnexion</a>
+<div data-role="page" id="accueil">
+
+  <div data-role="header" data-position="fixed">
+    <img src="<%= asset_path('pd/titre.png')%>" />
   </div>
 
-  <div class="content" data-role="content" data-theme="e">  
-    <a href="#newOrder" data-role="button" disabled="flase" data-icon="plus" data-direction="slide" data-theme="c">Envoyer une note</a>
-    <a href="#cashBoard" data-role="button" disabled="true" data-icon="grid" data-direction="slide" data-theme="c">Visualiser le solde</a>
-    <p>X Operations en cours : </p>
-    <a href="#pending" data-role="button" disabled="true" data-icon="info" data-direction="slide" data-theme="c">Voir</a>
+  <div class="content" data-role="content">  
+    <a href="#newOrder" data-transition="slide"><img src="<%= asset_path('pd/btn_envoyer-une-dette.png')%>" /></a>
+    <br />
+    <a href="#cashBoard" data-transition="slide"><img src="<%= asset_path('pd/btn_visualiser-mes-comptes.png')%>" /></a>
+    <br />    
+    <a href="#pending" data-transition="slide"><img src="<%= asset_path('pd/btn_reponse-en-attente.png')%>" /></a>
   </div>
+
+  <div data-role="footer" class ="firstfooters" data-id="homefooter" data-position="fixed"></div>
 </div>

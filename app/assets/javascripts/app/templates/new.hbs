@@ -1,3 +1,10 @@
+<label>Somme due :</label>
+{{view SC.TextField valueBinding="Dette.NewTransaction.label"}}
+<label>Sujet :</label>
+{{view SC.TextField valueBinding="Dette.NewTransaction.label"}}
+<label>Recherche d'ami :</label>
+{{view SC.TextField valueBinding="Dette.NewTransaction.label"}}
+{{#view SC.Button}}Ajouter{{/view}}
 
 {{#collection contentBinding="Dette.FriendsListt" tagName="ul"}}
   <img {{bindAttr src="content.avatar"}}/>
