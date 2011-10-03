@@ -1,3 +1,5 @@
+//=require ./record
+
 PD.Transaction = PD.Record.extend({
   amount: SC.Record.attr(Number),
   label: SC.Record.attr(String),

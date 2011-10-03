@@ -6,7 +6,7 @@
 //
 //= require jquery
 //= require sproutcore
-//= require sproutcore-statecharts
+//= require sproutcore-statechart
 //= require sproutcore-datastore
 
 //= require ./app/main

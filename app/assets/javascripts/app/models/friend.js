@@ -1,3 +1,5 @@
+//=require ./record
+
 PD.Friend = PD.Record.extend({
   //uid: 
   name: SC.Record.attr(String),

@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Detteapp
+    title Pense-Dette
     meta charset="utf-8"
     meta name="HandheldFriendly" content="True"
     meta name="MobileOptimized" content="320"
@@ -10,10 +10,9 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
-    -if is_mobile?
-      = javascript_include_tag "mobile"
+    = javascript_include_tag "mobile"
   body
-    header
+    .flash
       p.notice
         = notice
       p.alert
@@ -22,4 +21,5 @@ html
     javascript:
       // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
       MBP.scaleFix();
+      MBP.hideUrlBar();
 
