@@ -1,10 +1,13 @@
-class Api::TransactionsController < InheritedResources::Base
+class Api::TransactionsController < ApplicationController
   respond_to :json
-  actions :all, :except => [:new, :edit, :show]
   before_filter :authenticate_user!
 
   def account
     render :json => current_user.account
+  end
+
+  def index
+    render :json => current_user.transactions
   end
 
   def create
@@ -29,24 +32,35 @@ class Api::TransactionsController < InheritedResources::Base
       end
     end
     if borrower_account && creditor_account
-      resource = Transaction.create :creditor => creditor_account, :borrower => borrower_account,
+      @resource = Transaction.new :creditor => creditor_account, :borrower => borrower_account,
         :amount => resource_params[:amount], :label => resource_params[:label], :state => 0
-      render :json => resource
+      if resource.save
+        render :json => resource, :status => :created
+      else
+        render :json => resource.errors, :status => :unprocessable_entity
+      end
     else
-      head 404
+      head :not_found
     end
   end
 
   def update(options={}, &block)
-    resource = current_user.transactions.find params[:id]
-    resource.update_attributes :state => resource_params[:state], :label => resource_params[:label]
-    render :json => resource
+    if resource.update_attributes :state => resource_params[:state], :label => resource_params[:label]
+      head :ok
+    else
+      render :json => resource.errors, :status => :unprocessable_entity
+    end
+  end
+
+  def destroy
+    resource.destroy
+    head :ok
   end
 
   protected
 
-  def begin_of_association_chain
-    current_user
+  def resource
+    @resource ||= current_user.transactions.find params[:id]
   end
 
   def resource_params

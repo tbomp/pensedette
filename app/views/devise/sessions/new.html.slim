@@ -2,7 +2,7 @@
   header
     h1 Pense-Dette
   .content
-    p Bienvenue sur la WebApp Pense-Dette ! Beta-testeurs, Attention !!
+    h2 Bienvenue sur la WebApp Pense-Dette !
     ol
       li
         |- Vous allez connecter votre compte facebook afin de recuperer vos contacts.
@@ -11,7 +11,7 @@
       li
         |- Soumettre de futurs notes...
 
-    ul.list.methods
+    ul.list.providers
       - resource_class.omniauth_providers.each do |provider|
         li
-          = link_to omniauth_authorize_path(resource_name, provider), image_tag "#{provider}-connect.png"
+          = link_to image_tag("#{provider}-connect.png"), omniauth_authorize_path(resource_name, provider)

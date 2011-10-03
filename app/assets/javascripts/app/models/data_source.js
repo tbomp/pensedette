@@ -44,7 +44,7 @@ PD.DataSource = SC.DataSource.extend({
     return true;
   },
 
-  createTransaction = function(store, storeKey) {
+  createTransaction: function(store, storeKey) {
     var data = {amount: amount};
     if (borrow) {
       data.creditor = uid;
