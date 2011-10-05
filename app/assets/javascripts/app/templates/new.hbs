@@ -1,13 +1,9 @@
-<label>Somme due :</label>
-{{view SC.TextField valueBinding="Dette.NewTransaction.label"}}
-<label>Sujet :</label>
-{{view SC.TextField valueBinding="Dette.NewTransaction.label"}}
-<label>Recherche d'ami :</label>
-{{view SC.TextField valueBinding="Dette.NewTransaction.label"}}
-{{#view SC.Button}}Ajouter{{/view}}
+{{view PD.ToolbarView}}
 
-{{#collection contentBinding="Dette.FriendsListt" tagName="ul"}}
-  <img {{bindAttr src="content.avatar"}}/>
-  {{content.name}}
-  {{content.id}}
-{{/collection}}
+<label>Somme due :</label>
+{{view SC.TextField valueBinding="PD.NewTransaction.label"}}
+<label>Sujet :</label>
+{{view SC.TextField valueBinding="PD.NewTransaction.label"}}
+<label>Recherche d'ami :</label>
+{{view SC.TextField valueBinding="PD.NewTransaction.label"}}
+{{#view SC.Button}}Ajouter{{/view}}

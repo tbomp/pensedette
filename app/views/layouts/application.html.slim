@@ -17,7 +17,9 @@ html
         = notice
       p.alert
         = alert
-    = yield
+    .scrollable.horizontal.paginated.universal
+      .clipper
+        = yield
     javascript:
       // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
       MBP.scaleFix();

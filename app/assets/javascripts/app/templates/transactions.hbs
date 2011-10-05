@@ -1,2 +1,5 @@
-{{collection contentBinding="Dette.TransactionsList" tagName="ul"}}
+{{view PD.ToolbarView}}
 
+{{#collection contentBinding="PD.Transactions" tagName="ul"}}
+  {{content.label}}
+{{/collection}}

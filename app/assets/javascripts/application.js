@@ -9,6 +9,8 @@
 //= require sproutcore-statechart
 //= require sproutcore-datastore
 
+//= require layout_manager
+
 //= require ./app/main
 //= require_tree ./app
 
