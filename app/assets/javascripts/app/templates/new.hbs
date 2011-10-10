@@ -1,9 +1,22 @@
-{{view PD.ToolbarView}}
+{{view PD.HeaderView title="NOUVELLE DETTE"}}
 
-<label>Somme due :</label>
-{{view SC.TextField valueBinding="PD.NewTransaction.label"}}
-<label>Sujet :</label>
-{{view SC.TextField valueBinding="PD.NewTransaction.label"}}
-<label>Recherche d'ami :</label>
-{{view SC.TextField valueBinding="PD.NewTransaction.label"}}
-{{#view SC.Button}}Ajouter{{/view}}
+{{#view PD.ContentScrollView contentViewTagName="ul" contentBinding="PD.Transaction"}}
+    {{view PD.Switch valueBinding="content.relation"}}
+    <li>
+      {{view SC.TextField placeholder="Quoi ?" valueBinding="content.label"}}
+    </li>
+    <li>
+      {{view SC.TextField placeholder="Combien ?" pattern="[0-9]*" valueBinding="content.amount"}}
+    </li>
+    {{#view PD.FriendFinder}}
+      {{view PD.FriendFinderTextField placeholder="Qui ?" valueBinding="content.label"}}
+      {{#collection tagName="ul" contentBinding="PD.Friends" isVisibleBinding="isActive" toggleMethod="slideToggle"}}
+        {{content.name}}
+      {{/collection}}
+    {{/view}}
+    {{#view PD.ListButton action="createTransaction"}}
+      <h4>OK</h4>
+    {{/view}}
+{{/view}}
+
+{{view PD.FooterView}}

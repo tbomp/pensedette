@@ -1,22 +1,46 @@
-PD.ScreenView = SC.View.extend(SC.ManagedLayoutSupport, {
-  classNames: ['page'],
-
-  applyLayout: function(width) {
-    this.$().width(width);
-  }
+PD.HeaderView = SC.View.extend(UI.LayoutSupport, {
+  tagName: 'header',
+  templateName: 'app/header',
+  anchorTo: 'top',
+  size: '30px'
 });
 
-PD.HomeScreenView = PD.ScreenView.create({
-  elementId: 'accueil',
-  templateName: 'app/home'
+PD.ContentScrollView = SC.ScrollView.extend(UI.LayoutSupport, {
+  anchorTo: 'remainingSpace',
+  hasHorizontalScroller: false
 });
 
-PD.NewTransactionView = PD.ScreenView.create({
-  elementId: "new-transaction",
-  templateName: "app/new"
+PD.FooterView = SC.View.extend(UI.LayoutSupport, {
+  tagName: 'footer',
+  templateName: 'app/footer',
+  anchorTo: 'bottom',
+  size: '30px'
 });
 
-PD.TransactionsPageView = PD.ScreenView.create({
-  elementId: "transactions",
-  templateName: "app/transactions"
+PD.ContainerView = SC.View.extend(UI.LayoutSupport, {
+  classNames: ['container'],
+  isVisible: false,
+  anchorTo: 'remainingSpace'
+});
+
+PD.ApplicationView = SC.ContainerView.extend({
+  classNames: ['application'],
+  targetBinding: 'PD.statechart',
+  homeScreen: PD.ContainerView.extend({
+    elementId: 'home',
+    templateName: 'app/home'
+  }),
+  newTransactionScreen: PD.ContainerView.extend({
+    elementId: 'new-transaction',
+    templateName: 'app/new'
+  }),
+  transactionsScreen: PD.ContainerView.extend({
+    elementId: 'transactions',
+    templateName: 'app/transactions'
+  }),
+  pendingScreen: PD.ContainerView.extend({
+    elementId: 'pending',
+    templateName: 'app/pending'
+  }),
+  childViews: ['homeScreen', 'newTransactionScreen', 'transactionsScreen', 'pendingScreen']
 });

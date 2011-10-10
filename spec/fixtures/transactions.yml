@@ -30,10 +30,10 @@ Pierre_doit_500_a_Paul_seconde_dette:
   label: Pierre_doit_500_a_Paul_seconde_dette
   credited: true
 
-John_doit_666_a_John:
+John_doit_666_a_Bob:
   borrower_id: 2
   creditor_id: 1
   amount: 666
   state: 1 #accepted
-  label: John_doit_666_a_John
+  label: John_doit_666_a_Bob
   credited: true

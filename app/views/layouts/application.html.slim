@@ -9,17 +9,16 @@ html
     meta http-equiv="cleartype" content="on"
     = csrf_meta_tags
     = stylesheet_link_tag "application"
+    link href='http://fonts.googleapis.com/css?family=Days+One|Changa+One' rel='stylesheet' type='text/css'
     = javascript_include_tag "application"
-    = javascript_include_tag "mobile"
   body
     .flash
       p.notice
         = notice
       p.alert
         = alert
-    .scrollable.horizontal.paginated.universal
-      .clipper
-        = yield
+    .application
+      = yield
     javascript:
       // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
       MBP.scaleFix();

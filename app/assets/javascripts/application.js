@@ -4,13 +4,17 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
-//= require jquery
 //= require sproutcore
 //= require sproutcore-statechart
 //= require sproutcore-datastore
+//= require sproutcore-ui
+//= require sc-touch
 
-//= require layout_manager
+//= require sproutcore-experimental
+//= require i18n
+//= require mbp-helper
 
 //= require ./app/main
+//= require ./app/statechart
 //= require_tree ./app
 

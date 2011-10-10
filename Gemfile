@@ -8,7 +8,7 @@ gem 'mini_record'
 #gem 'state_machine'
 gem 'slim'
 
-#gem 'i18n-js'
+gem 'i18n-js'
 
 # Gems used only for assets and not required
 # in production environments by default.
