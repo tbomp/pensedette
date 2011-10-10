@@ -141,9 +141,10 @@ UI.LayoutManager = SC.Object.extend(
   layoutForManagedView: function(view, anchor, options) {
     if (anchor === 'remainingSpace') {
       return this._layoutForContentView(view, anchor, options);
+    } else if (anchor) {
+      return this._layoutForAnchoredView(view, anchor, options);
     }
-
-    return this._layoutForAnchoredView(view, anchor, options);
+    return null;
   },
 
   destroy: function() {
@@ -218,7 +219,6 @@ UI.LayoutManager = SC.Object.extend(
 
     layout[beforeAnchorName] = remainingSpace.before;
     layout[afterAnchorName] = remainingSpace.after;
-
     return layout;
   },
 
@@ -228,14 +228,13 @@ UI.LayoutManager = SC.Object.extend(
     if (!remainingSpace) { return; }
     else if (!remainingSpace.view) { return; }
 
-
     var layout = this._layoutForContentView(remainingSpace ,'remainingSpace');
     var element = get(remainingSpace.view,'element');
 
     if (element) {
-      for (var prop in layout) {
-        $(element).css(prop,layout[prop]); 
-      }
+      remainingSpace.view.applyLayout(layout);
+    } else {
+      SC.run.schedule('render', remainingSpace.view, 'applyLayout', layout);
     }
   }
 });
@@ -350,11 +349,15 @@ UI.LayoutSupport = SC.Mixin.create(
     return manager;
   },
 
-  applyLayout: function(buffer,layout) {
-    buffer.style('position','absolute');
+  applyLayout: function(layout, buffer) {
+    if (buffer) {
+      buffer.style('position','absolute');
 
-    for (var prop in layout) {
-      buffer.style(prop,layout[prop]); 
+      for (var prop in layout) {
+        buffer.style(prop, layout[prop]); 
+      }
+    } else {
+      this.$().css(layout);
     }
   },
 
@@ -365,7 +368,9 @@ UI.LayoutSupport = SC.Mixin.create(
       size: get(this,'size')
     });
 
-    this.applyLayout(buffer,layout);
+    if (layout) {
+      this.applyLayout(layout, buffer);
+    }
 
     return this._super(buffer);
   },
