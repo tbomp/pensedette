@@ -1,9 +1,18 @@
-
 PD = SC.Application.create({
-  //store: SC.Store.create().from()
-  store: SC.Store.create().from('PD.DataSource')
+  store: SC.Store.create().from('PD.DataSource'),
+  ready: function() {
+    this._super();
+    PD.rootView = PD.ApplicationView.create();
+    $('body .application').remove();
+    PD.rootView.appendTo('body');
+    PD.statechart.initStatechart();
+  }
 });
 
-SC.$(document).ready(function(){
-  //PD.statechart.    
+SC.Button.reopen({
+  classNames: ['large']
+});
+
+SC.TextField.reopen({
+  classNames: ['xlarge']
 });

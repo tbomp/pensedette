@@ -1,5 +1,17 @@
-{{view PD.ToolbarView}}
+{{view PD.HeaderView title="PENSE-DETTE"}}
 
-{{#view SC.Button target="PD.statechart" action="showNew"}}New{{/view}}
-{{#view SC.Button target="PD.statechart" action="showTransactions"}}Transactions{{/view}}
-{{#view SC.Button target="PD.statechart" action="showPending"}}Pending{{/view}}
+{{#view PD.ContentScrollView contentViewTagName="ul"}}
+  {{#view PD.ListButton action="showNewTransactionScreen"}}
+    <h4>ENVOYER</h4>
+    <p>un pense-dette</p>
+  {{/view}}
+  {{#view PD.ListButton action="showTransactionsScreen"}}
+    <h4>VISUALISER</h4>
+    <p>mes comptes</p>
+  {{/view}}
+  {{#view PD.ListButton action="showPendingScreen"}}
+    <h4>{{PD.Transactions.pending}} REPONSES</h4><p>en attente</p>
+  {{/view}}
+{{/view}}
+
+{{view PD.FooterView}}

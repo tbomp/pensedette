@@ -1,3 +1,4 @@
 PD.Transactions = SC.ArrayProxy.create({
-  content: []
+  content: [],
+  pending: 3
 });

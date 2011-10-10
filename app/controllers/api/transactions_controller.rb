@@ -17,19 +17,19 @@ class Api::TransactionsController < ApplicationController
     borrower_account = nil
 
     if creditor_uid
-      creditor_account = Account.find_by_uid creditor_uid
+      creditor_account = Account.find_or_create_by_uid creditor_uid
       borrower_account = current_user.account
 
-      if !creditor_account
-        creditor_account = Account.create :uid => creditor_uid
-      end
+      # if !creditor_account
+      #   creditor_account = Account.create :uid => creditor_uid
+      # end
     elsif borrower_uid
       creditor_account = current_user.account
-      borrower_account = Account.find_by_uid borrower_uid
+      borrower_account = Account.find_or_create_by_uid borrower_uid
 
-      if !borrower_account
-        borrower_account = Account.create :uid => borrower_uid
-      end
+      # if !borrower_account
+      #   borrower_account = Account.create :uid => borrower_uid
+      # end
     end
     if borrower_account && creditor_account
       @resource = Transaction.new :creditor => creditor_account, :borrower => borrower_account,
