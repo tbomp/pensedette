@@ -10,6 +10,7 @@
 //= require sproutcore-ui
 //= require sc-touch
 
+//= require iscroll
 //= require sproutcore-experimental
 //= require i18n
 //= require mbp-helper
