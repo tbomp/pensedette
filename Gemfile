@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 3.1'
 gem 'devise'
-#gem 'oa-oauth', :require => 'omniauth/oauth'
 gem 'omniauth-facebook'
 
 gem 'koala', '~> 1.2.0beta'
@@ -34,7 +33,6 @@ group :production do
 end
 
 group :development do
-  #gem 'rails-footnotes', '>= 3.7.5.rc'
 end
 
 group :test do
