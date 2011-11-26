@@ -9,7 +9,14 @@ html
     meta http-equiv="cleartype" content="on"
     = csrf_meta_tags
     = stylesheet_link_tag "mobile"
-    link href='http://fonts.googleapis.com/css?family=Days+One|Changa+One' rel='stylesheet' type='text/css'
-    = javascript_include_tag "main/mobile"
+    link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'
+    - if params.has_key?(:dev)
+      = javascript_include_tag "main/mobile"
   body
-    = yield
+    - if params.has_key?(:dev)
+      #application
+        h1 Chargement...
+    - else
+      #splash
+        h1 Pense Dette
+      

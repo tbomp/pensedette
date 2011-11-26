@@ -7,8 +7,21 @@
   font-weight: bold;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  @include linear-gradient(#fff, #FFF5CD);
+  @include linear-gradient(#fff, #edeeee);
+}
+
+#splash, #application {
+  h1 {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 3em;
+    color: #444;
+  }
 }
 
 #application {
