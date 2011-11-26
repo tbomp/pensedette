@@ -1,5 +1,3 @@
-//= require app/controllers/transactions
-
 PD.TransactionsView = SC.CollectionView.extend({
   tagName: 'ul',
   contentBinding: 'PD.Transactions',

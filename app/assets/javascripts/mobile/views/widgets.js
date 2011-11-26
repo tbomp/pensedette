@@ -1,5 +1,13 @@
-PD.ListButton = SC.Button.extend({
-  classNames: ['btn', 'large'],
+PD.Button = SC.Button.extend({
+  classNames: ['large'],
+  targetBinding: 'PD.statechart'
+});
+
+PD.TextField = SC.TextField.extend({
+  classNames: ['xlarge']
+});
+
+PD.ListButton = PD.Button.extend({
   tagName: 'li'
 });
 

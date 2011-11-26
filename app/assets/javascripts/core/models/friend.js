@@ -1,10 +1,7 @@
-//=require ./record
-
-PD.Friend = PD.Record.extend({
+PD.Friend = SC.Record.extend({
   //uid: 
   name: SC.Record.attr(String),
   source: SC.Record.attr(String),
-  //cercles:
 
   avatar: function(){
     if (this.get('source') === 'facebook') {

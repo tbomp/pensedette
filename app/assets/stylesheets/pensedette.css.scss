@@ -51,6 +51,11 @@ header {
   }
 }
 
+.pd-scroll {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 h1, h4, p, .pd-switch button span {
   text-align: center;
   color:#fef7ce;
