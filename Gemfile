@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '~> 3.1'
+gem 'thin'
 gem 'devise'
 gem 'omniauth-facebook'
 
@@ -22,7 +23,6 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'thin'
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.5'
   gem 'pry'
