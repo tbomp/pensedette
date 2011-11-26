@@ -15,6 +15,7 @@ html {
 body {
   @include linear-gradient(#fff, #edeeee);
   overflow: hidden;
+  height: 100%;
 }
 
 #splash, #application {
@@ -22,6 +23,7 @@ body {
     font-family: 'Lobster', cursive;
     font-size: 3em;
   }
+  height: 100%;
 }
 
 #splash {
@@ -52,7 +54,6 @@ body {
 
 #pd-main > div {
   padding: 10px;
-  //@include linear-gradient(#fff, #FFF5CD);
   @include radial-gradient(50% 50%, circle cover, #fff, #FFF5CD);
 }
 
