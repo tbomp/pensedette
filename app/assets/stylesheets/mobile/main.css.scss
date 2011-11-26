@@ -9,18 +9,27 @@
 
 html {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
   @include linear-gradient(#fff, #edeeee);
+  overflow: hidden;
 }
 
 #splash, #application {
   h1 {
-    text-align: center;
     font-family: 'Lobster', cursive;
     font-size: 3em;
-    color: #444;
+  }
+}
+
+#splash {
+  text-align: center;
+  font-family: Arial;
+  color: #444;
+  img {
+    height: 60%;
   }
 }
 
