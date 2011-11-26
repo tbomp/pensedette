@@ -1,0 +1,16 @@
+{{view PD.Switch valueBinding="content.relation"}}
+<li>
+  {{view SC.TextField placeholder="Quoi ?" valueBinding="PD.title"}}
+</li>
+<li>
+  {{view SC.TextField placeholder="Combien ?" pattern="[0-9]*" valueBinding="content.amount"}}
+</li>
+{{#view PD.FriendFinder}}
+  {{view PD.FriendFinderTextField placeholder="Qui ?" valueBinding="content.label"}}
+  {{#collection tagName="ul" contentBinding="PD.Friends" isVisibleBinding="isActive" toggleMethod="slideToggle"}}
+    {{content.name}}
+  {{/collection}}
+{{/view}}
+{{#view PD.ListButton action="createTransaction"}}
+  <h4>OK</h4>
+{{/view}}

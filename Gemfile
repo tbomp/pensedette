@@ -2,7 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 3.1'
 gem 'devise'
-gem 'oa-oauth', :require => 'omniauth/oauth'
+#gem 'oa-oauth', :require => 'omniauth/oauth'
+gem 'omniauth-facebook'
+
 gem 'koala', '~> 1.2.0beta'
 gem 'mini_record'
 #gem 'state_machine'

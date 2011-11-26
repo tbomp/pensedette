@@ -8,19 +8,8 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     meta http-equiv="cleartype" content="on"
     = csrf_meta_tags
-    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "mobile"
     link href='http://fonts.googleapis.com/css?family=Days+One|Changa+One' rel='stylesheet' type='text/css'
-    = javascript_include_tag "application"
+    = javascript_include_tag "mobile"
   body
-    .flash
-      p.notice
-        = notice
-      p.alert
-        = alert
-    .application
-      = yield
-    javascript:
-      // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
-      MBP.scaleFix();
-      MBP.hideUrlBar();
-
+    = yield
