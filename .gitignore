@@ -7,3 +7,4 @@ config/database.yml
 db/schema.rb
 .rvmrc
 db/test.sqlite3-journal
+public/assets
