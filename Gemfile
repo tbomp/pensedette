@@ -18,12 +18,12 @@ group :assets do
   gem 'sass-rails', '~> 3.1'
   gem 'bourbon'
   gem 'uglifier'
+  gem 'jquery-rails'
   gem 'rasputin'
 end
 
-gem 'jquery-rails'
-
 group :test, :development do
+  gem 'thin'
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.5'
   gem 'pry'
@@ -34,7 +34,7 @@ group :production do
 end
 
 group :development do
-  gem 'rails-footnotes', '>= 3.7.5.rc'
+  #gem 'rails-footnotes', '>= 3.7.5.rc'
 end
 
 group :test do

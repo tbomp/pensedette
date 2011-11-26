@@ -1,5 +1,7 @@
 PD.DataSource = SC.DataSource.extend({
   fetch: function(store, query) {
+    store.dataSourceDidFetchQuery(query);
+    return true;
     var recordType = query.get('recordType');
     switch (recordType) {
     case PD.Friend:

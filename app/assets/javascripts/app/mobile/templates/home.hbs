@@ -1,0 +1,11 @@
+{{#view PD.ListButton action="gotoNewTransaction"}}
+  <h4>ENVOYER</h4>
+  <p>un pense-dette</p>
+{{/view}}
+{{#view PD.ListButton action="gotoTransactions"}}
+  <h4>VISUALISER</h4>
+  <p>mes comptes</p>
+{{/view}}
+{{#view PD.ListButton action="gotoPending"}}
+  <h4>{{PD.CurrentUser.pendingCount}} REPONSES</h4><p>en attente</p>
+{{/view}}

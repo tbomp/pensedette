@@ -1,0 +1,9 @@
+fr:
+  pd:
+    nav:
+      home: Pense-Dette
+      new: Nouveau pense dette
+      transactions: Mes comptes
+      pending: En attente
+    send: Envoyer
+

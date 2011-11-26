@@ -1,0 +1,25 @@
+{{#ui tagName="header" anchorTo="top" size="40" contentBinding="PD.applicationViewController"}}
+  {{view PD.BackButton targetBinding="content"}}
+  {{view UI.LabelView titleBinding="content.title" localize=true}}
+{{/ui}}
+{{#ui PD.applicationViewController id="pd-main"}}
+  {{#ui id="pd-home"}}
+    {{view PD.Button title="pd.nav.new" action="showNew"}}
+    {{view PD.Button title="pd.nav.pending" action="showPending"}}
+    {{view PD.Button title="pd.nav.transactions" action="showTransactions"}}
+  {{/ui}}
+  {{#ui id="pd-new" contentBinding="PD.transactionController"}}
+    {{view UI.NumericField title="Combien" valueBinding="content.amount"}}
+    {{view UI.TextField title="Pour quoi" valueBinding="content.label"}}
+    {{view UI.TextField title="Qui" valueBinding="content.friend"}}
+    {{view PD.Button title="pd.send" targetBinding="content" action="save"}}
+  {{/ui}}
+  {{#ui id="pd-pending"}}
+    {{#collection contentBinding="PD.transactionsController"}}
+      {{content.label}} - {{content.amount}}
+    {{/collection}}
+  {{/ui}}
+  {{#ui id="pd-transactions"}}
+
+  {{/ui}}
+{{/ui}}
