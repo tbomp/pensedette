@@ -85,8 +85,6 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.7.1)
     mime-types (1.18)
-    mini_record (0.3.1)
-      activerecord (>= 3.2.0)
     multi_json (1.2.0)
     multipart-post (1.1.5)
     oauth2 (0.5.2)
@@ -194,7 +192,6 @@ DEPENDENCIES
   jquery-rails
   json_spec
   koala (~> 1.2.0beta)
-  mini_record
   omniauth-facebook
   pg
   pry

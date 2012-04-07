@@ -6,7 +6,6 @@ gem 'devise'
 gem 'omniauth-facebook'
 
 gem 'koala', '~> 1.2.0beta'
-gem 'mini_record'
 gem 'active_model_serializers', :git => 'git://github.com/josevalim/active_model_serializers.git'
 gem 'active_attr'
 
