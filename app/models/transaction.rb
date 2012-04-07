@@ -1,16 +1,10 @@
 class Transaction < ActiveRecord::Base
-  belongs_to :creditor, :class_name => 'Account'
-  belongs_to :borrower, :class_name => 'Account'
+  belongs_to :account
+  belongs_to :foreign_account, :class_name => 'Account'
 
   after_save :credit_account
 
-  col :creditor, :as => :references
-  col :borrower, :as => :references
-  col :amount, :as => :integer
-  col :label
-  col :state, :as => :integer, :default => 0
-  col :credited, :as => :boolean
-
+  scope :pending, where(:state => 0)
   scope :accepted, where(:state => 1)
   scope :regected, where(:state => 2)
 
@@ -28,18 +22,6 @@ class Transaction < ActiveRecord::Base
   ACCEPTED = 1
   REGECTED = 2
 
-  def borrower_uid
-    self.borrower.uid
-  end
-
-  def creditor_uid
-    self.creditor.uid
-  end
-
-  def as_json options={}
-    super(:except => [:creditor_id, :borrower_id, :credited], :methods => [:borrower_uid, :creditor_uid])
-  end
-
   protected
 
   def credit_account
@@ -55,5 +37,3 @@ class Transaction < ActiveRecord::Base
   end
 
 end
-Transaction.auto_upgrade!
-

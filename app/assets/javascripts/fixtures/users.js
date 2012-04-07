@@ -1,6 +1,6 @@
 //= require ../app/models/user
 
-PD.User.FIXTURES = [
+Panda.User.FIXTURES = [
   {
     id: 1,
     name: 'Paul Chavard'

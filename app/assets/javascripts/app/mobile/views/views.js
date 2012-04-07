@@ -1,34 +1,13 @@
-PD.RootView = SC.View.extend({
-  templateName: 'app/mobile/application'
+Panda.Button = Ember.Button.extend({
+  classNames: 'panda-button'.w()
 });
 
-PD.Button = UI.Button.extend({
-  classNames: 'pd-button'.w(),
-  target: 'PD.applicationViewController',
-  localize: true
-});
-
-PD.BackButton = UI.Button.extend({
-  title: 'back',
-  target: 'PD.applicationViewController',
-  action: 'showHome',
-  isVisibleBinding: SC.Binding.oneWay('targetObject.currentViewId').transform(function(value) {
-    return value !== 'pd-home';
-  })
-});
-
-PD.TextField = UI.TextField.extend({
-  classNames: 'pd-text-field'.w(),
-  localize: true
-});
-
-PD.ListButton = PD.Button.extend({
+Panda.ListButton = Panda.Button.extend({
   tagName: 'li'
 });
 
-PD.SwitchButton = SC.Button.extend({
+Panda.SwitchButton = Em.Button.extend({
   targetBinding: 'parentView',
-  classNames: ['btn'],
   classNameBindings: ['isOff:disabled'],
   tagName: 'button',
   action: 'switchValue',
@@ -37,15 +16,15 @@ PD.SwitchButton = SC.Button.extend({
   }.property('parentView.value', 'value').cacheable()
 });
 
-PD.Switch = SC.ContainerView.extend({
+Panda.Switch = Em.ContainerView.extend({
   tagName: 'li',
   classNames: ['clearfix', 'pd-switch'],
   childViews: ['leftButton', 'rightButton'],
-  leftButton: PD.SwitchButton.extend({
+  leftButton: Panda.SwitchButton.extend({
     value: 'borrower',
     title: 'Je dois'
   }),
-  rightButton: PD.SwitchButton.extend({
+  rightButton: Panda.SwitchButton.extend({
     value: 'creditor',
     title: 'Tu me dois'
   }),
@@ -54,18 +33,18 @@ PD.Switch = SC.ContainerView.extend({
   }
 });
 
-PD.FriendFinder = SC.View.extend({
+Panda.FriendFinder = Em.View.extend({
   tagName: 'li',
-  classNames: 'pd-friend-finder'.w(),
+  classNames: 'panda-friend-finder'.w(),
   isActive: false
 });
 
-PD.FriendFinderTextField = SC.TextField.extend({
+Panda.FriendFinderTextField = Em.TextField.extend({
   focusIn: function() {
     var position = this.$().offset();
     //window.scrollTo( 0, position.top );
     this.setPath('parentView.isActive', true);
-    PD.Friends.pushObjects([
+    Panda.friendsController.pushObjects([
       {name: 'Paul'},
       {name: 'Pierre'},
       {name: 'Thomas'}

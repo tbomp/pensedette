@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110924064701) do
+ActiveRecord::Schema.define(:version => 20120407181208) do
+
+  create_table "accounts", :force => true do |t|
+    t.string  "uid"
+    t.string  "name"
+    t.integer "total", :default => 0
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.integer "account_id"
+    t.integer "foreign_account_id"
+    t.integer "amount"
+    t.string  "label"
+    t.integer "state",              :default => 0
+    t.boolean "credited"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -25,8 +40,9 @@ ActiveRecord::Schema.define(:version => 20110924064701) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
+    t.integer  "account_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

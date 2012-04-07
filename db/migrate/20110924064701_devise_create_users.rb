@@ -12,6 +12,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
 
       t.timestamps
+
+      t.references :account
     end
 
     add_index :users, :email,                :unique => true

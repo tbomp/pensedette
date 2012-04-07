@@ -1,32 +1,36 @@
-PD.transactionController = SC.ObjectProxy.create({
+Panda.TransactionController = Ember.Object.extend({
 
-  store: PD.store.chain(),
+  amountBinding: 'content.amount',
+  labelBinding: 'content.label',
 
-  init: function() {
-    this._super();
-    this.reset();
+  submit: function(evt) {
+    evt.preventDefault();
+
+    var content = this.get('content');
+
+    Panda.userController.getPath('account.transactions').pushObject(content);
+    content.set('account', Panda.friendsController.get('account'));
+    content.get('transaction').commit();
+
+    content.addObserver('isSaving', this, 'didSave');
   },
 
-  edit: function(transaction) {
-    this.get('store').discardChanges();
-    transaction = this.get('store').find(transaction);
-    this.set('content', transaction);
-  },
-
-  save: function() {
-    if (this.get('isRecord')) {
-      this.get('store').commitChanges();
-      PD.store.commitRecord(this.get('content'));
+  didSave: function(content, key, isSaving) {
+    if (!isSaving) {
+      content.removeObserver('isSaving', this, 'didSave');
+      this.reset();
     }
-    this.reset();
   },
 
   reset: function() {
-    var transaction = this.get('store').createRecord(PD.Transaction, {});
-    this.set('content', transaction);
-  }
+    this.set('content', Panda.Transaction.createRecord());
+  },
+
+  friendNameBinding: 'Panda.friendsController.name'
 });
 
-PD.transactionsController = SC.ArrayProxy.create({
-  content: PD.store.find(PD.Transaction)
+Panda.TransactionsController = Ember.ArrayProxy.extend({
+
+  contentBinding: 'Panda.userController.account.transactions'
+
 });

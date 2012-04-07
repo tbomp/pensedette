@@ -1,13 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1'
+gem 'rails', '~> 3.2'
 gem 'thin'
 gem 'devise'
 gem 'omniauth-facebook'
 
 gem 'koala', '~> 1.2.0beta'
 gem 'mini_record'
-#gem 'state_machine'
+gem 'active_model_serializers', :git => 'git://github.com/josevalim/active_model_serializers.git'
+gem 'active_attr'
+
 gem 'slim'
 
 gem 'i18n-js'
@@ -20,6 +22,7 @@ group :assets do
   gem 'uglifier'
   gem 'jquery-rails'
   gem 'rasputin'
+  gem 'amplify'
 end
 
 group :test, :development do

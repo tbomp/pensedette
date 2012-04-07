@@ -11,34 +11,17 @@ class Api::TransactionsController < ApplicationController
   end
 
   def create
-    creditor_uid = resource_params[:creditor]
-    creditor_account = nil
-    borrower_uid = resource_params[:borrower]
-    borrower_account = nil
-
-    if creditor_uid
-      creditor_account = Account.find_or_create_by_uid creditor_uid
-      borrower_account = current_user.account
-
-      # if !creditor_account
-      #   creditor_account = Account.create :uid => creditor_uid
-      # end
-    elsif borrower_uid
-      creditor_account = current_user.account
-      borrower_account = Account.find_or_create_by_uid borrower_uid
-
-      # if !borrower_account
-      #   borrower_account = Account.create :uid => borrower_uid
-      # end
-    end
-    if borrower_account && creditor_account
-      @resource = Transaction.new :creditor => creditor_account, :borrower => borrower_account,
-        :amount => resource_params[:amount], :label => resource_params[:label], :state => 0
-      if resource.save
-        render :json => resource, :status => :created
-      else
-        render :json => resource.errors, :status => :unprocessable_entity
-      end
+    account = current_user.account
+    foreign_account = Account.find(filtered_params[:account])
+    if account && foreign_account
+      @resource = Transaction.new(
+        :account => account,
+        :foreign_account => foreign_account,
+        :amount => filtered_params[:amount],
+        :label => filtered_params[:label]
+      )
+      resource.save
+      respond_with resource, :location => nil
     else
       head :not_found
     end
@@ -58,6 +41,10 @@ class Api::TransactionsController < ApplicationController
   end
 
   protected
+
+  def filtered_params
+    params[:transaction].slice(:label, :amount, :account)
+  end
 
   def resource
     @resource ||= current_user.transactions.find params[:id]

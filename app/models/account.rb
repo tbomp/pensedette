@@ -1,22 +1,16 @@
 class Account < ActiveRecord::Base
-  belongs_to :user
-
-  col :user, :as => :references
-  col :uid, :as => :string
-  col :total, :as => :integer, :default => 0
-
   validates :total,
     :numericality => {
       :only_integer => true
     }
 
-  def transactions
-    Transaction.where('borrower_id = ? OR creditor_id = ?', id, id)
+  has_many :transactions
+  has_many :foreign_transactions, :class_name => 'Transaction', :foreign_key => 'foreign_account_id'
+
+  def all_transactions
+    transactions
+    #(transactions + foreign_transactions).uniq
+    #Transaction.where('foreign_account_id = ? OR account_id = ?', id, id)
   end
 
-  def as_json options={}
-    super :only => [:uid, :total]
-  end
 end
-Account.auto_upgrade!
-

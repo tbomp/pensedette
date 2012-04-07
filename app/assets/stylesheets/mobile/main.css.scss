@@ -18,7 +18,7 @@ body {
   height: 100%;
 }
 
-#splash, #application {
+#splash, #panda-application {
   h1 {
     font-family: 'Lobster', cursive;
     font-size: 3em;
@@ -35,32 +35,51 @@ body {
   }
 }
 
-#application {
+#panda-application {
   header, footer {
     @include linear-gradient(#2e2e2e, #000000);
     text-align: center;
-    font-size: 1.5em;
     color: white;
-    padding-top: 5px;
-  }
-
-  header {
-    .ui-button {
-      @include position(absolute, 6px 0 0 6px);
-      @include button(simple, #444);
+    h1 {
+      margin: 0;
+      font-size: 1.5em;
     }
   }
+
+  footer {
+    height: 23px;
+    padding: 8px;
+    li {
+      @include button(simple, #1e1e1e);
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
 }
 
-#pd-main > div {
+#panda-application > div {
   padding: 10px;
   @include radial-gradient(50% 50%, circle cover, #fff, #FFF5CD);
+  height: 200px;
 }
 
-.pd-button {
+.panda-new .ember-button {
   @include button(simple, #f9f9f9);
   @include border-radius(10px);
   @include large-button();
+  box-sizing: border-box;
+  text-align: center;
+  a {
+    color: #444;
+    text-decoration: none;
+  }
 }
 
 @mixin large-textfield() {
@@ -73,10 +92,11 @@ body {
 }
 
 
-.ui-text-field {
+.ember-text-field {
   @include large-textfield();
   @include border-radius(0px);
   border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
   &:first-of-type {
     @include border-top-radius(10px);
   }

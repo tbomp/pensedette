@@ -23,7 +23,9 @@ class Api::FriendsController < ApplicationController
   protected
 
   def facebook_friends
-    @facebook_friends ||= get_facebook_friends
+    @facebook_friends ||= get_facebook_friends.map do |hash|
+      Friend.new(:name => hash['name'], :id => hash['id'])
+    end
   end
 
   def get_facebook_friends

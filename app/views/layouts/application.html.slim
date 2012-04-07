@@ -7,18 +7,24 @@ html
     meta name="MobileOptimized" content="320"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     meta http-equiv="cleartype" content="on"
+    - if user_signed_in?
+      javascript:
+        _DATA = #{{current_user.to_data}};
     = csrf_meta_tags
     = stylesheet_link_tag "mobile"
     link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'
     - if params.has_key?(:dev)
-      = javascript_include_tag "main/mobile"
+      = javascript_include_tag "mobile"
   body
     - if params.has_key?(:dev)
-      #application
-        h1 Chargement...
+      - if user_signed_in?
+        #application
+          h1 Chargement...
+      - else
+        = render 'devise/sessions/new'
     - else
       #splash
         h1 Pense Dette
         img src="#{image_path 'index.png'}"
         h2 Disponible prochainement
-      
+

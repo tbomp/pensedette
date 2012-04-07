@@ -1,25 +1,35 @@
-{{#ui tagName="header" anchorTo="top" size="40" contentBinding="PD.applicationViewController"}}
-  {{view PD.BackButton targetBinding="content"}}
-  {{view UI.LabelView titleBinding="content.title" localize=true}}
-{{/ui}}
-{{#ui PD.applicationViewController id="pd-main"}}
-  {{#ui id="pd-home"}}
-    {{view PD.Button title="pd.nav.new" action="showNew"}}
-    {{view PD.Button title="pd.nav.pending" action="showPending"}}
-    {{view PD.Button title="pd.nav.transactions" action="showTransactions"}}
-  {{/ui}}
-  {{#ui id="pd-new" contentBinding="PD.transactionController"}}
-    {{view UI.NumericField title="Combien" valueBinding="content.amount"}}
-    {{view UI.TextField title="Pour quoi" valueBinding="content.label"}}
-    {{view UI.TextField title="Qui" valueBinding="content.friend"}}
-    {{view PD.Button title="pd.send" targetBinding="content" action="save"}}
-  {{/ui}}
-  {{#ui id="pd-pending"}}
-    {{#collection contentBinding="PD.transactionsController"}}
-      {{content.label}} - {{content.amount}}
-    {{/collection}}
-  {{/ui}}
-  {{#ui id="pd-transactions"}}
+<header>
+  <h1>{{currentViewTitle}}</h1>
+</header>
 
-  {{/ui}}
-{{/ui}}
+<div role="main">
+  {{#view Panda.TabPaneView viewName="pending" contentBinding="Panda.transactionsController"}}
+    {{#collection contentBinding="Panda.transactionsController" tagName="ul"}}
+      {{content.label}} {{content.amount}} Euros {{Panda.userController.account.name}} -> {{content.account.name}}
+    {{/collection}}
+  {{/view}}
+
+  {{#view Panda.TabPaneView viewName="new" contentBinding="Panda.transactionController"}}
+    <form {{action "submit" on="submit" target="Panda.transactionController"}}>
+      {{view Ember.TextField type="number" placeholder="Combien" valueBinding="content.amount"}}
+      {{view Ember.TextField placeholder="Pour quoi" valueBinding="content.label"}}
+      {{view Ember.TextField placeholder="Qui" valueBinding="content.friendName"}}
+
+      {{#collection contentBinding="Panda.friendsController.results" tagName="ul"}}
+        <a href="#" {{action select target="Panda.friendsController"}}>{{content.name}}</a>
+      {{/collection}}
+
+      <button class="ember-button" type="submit">Save</button>
+    </form>
+  {{/view}}
+
+  {{#view Panda.TabPaneView viewName="transactions"}}
+  {{/view}}
+</div>
+<footer>
+  <ul>
+    {{view Panda.TabView value="pending"}}
+    {{view Panda.TabView value="new"}}
+    {{view Panda.TabView value="transactions"}}
+  </ul>
+</footer>

@@ -1,6 +1,6 @@
 //= require ../app/models/transaction
 
-PD.Transaction.FIXTURES = [
+Panda.Transaction.FIXTURES = [
   { id: 1,
     amount: 500
   },
