@@ -20,8 +20,7 @@ group :assets do
   gem 'bourbon'
   gem 'uglifier'
   gem 'jquery-rails'
-  gem 'rasputin'
-  gem 'amplify'
+  gem 'ember-rails'
 end
 
 group :test, :development do

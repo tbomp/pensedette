@@ -6,7 +6,7 @@ Panda.ApplicationView = Em.TabContainerView.extend({
   currentViewTitleBinding: Em.Binding.oneWay('Panda.stateManager.currentState.name').transform(function(value) {
     return typeof value === 'string' ? I18n.translate('panda.nav.'+value) : null;
   }),
-  templateName: 'app/mobile/application'
+  templateName: 'app/mobile/templates/application'
 });
 
 Panda.TabView = Em.TabView.extend({
@@ -34,9 +34,9 @@ $('a[href]').click(function(evt) {
 });
 
 Panda.TabPaneView = Em.TabPaneView.extend({
-  templateNameBinding: Em.Binding.oneWay('viewName').transform(function(value) {
-    return "app/mobile/%@".fmt(value);
-  }),
+  // templateNameBinding: Em.Binding.oneWay('viewName').transform(function(value) {
+  //   return "app/mobile/%@".fmt(value);
+  // }),
 
   init: function() {
     var name = this.get('viewName');
